@@ -46,7 +46,7 @@ nav {
 
 /* Active link (current page) */
 .nav-links a.active {
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 6px;
     background-color: #0F80E9;
     color: white;
@@ -55,7 +55,10 @@ nav {
 /* ================= MAIN ================= */
 
 main {
+    display: grid;
+    place-items: center;
     padding: 2rem;
+    background-color: #DDFFF8;
 }
 
 section {
@@ -92,8 +95,195 @@ footer {
 .footer-right a {
     margin-left: 1rem;
     text-decoration: none;
-    color: black;
+    color: blue;
 }
+
+
+
+/* ================= HOME ================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+}
+
+/* Tekst links */
+.hero-text h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+/* Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    border: 2px solid black;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #0F80E9;
+}
+
+/* Hover effect */
+.cta-button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Image rechts */
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+.highlight {
+    color: #0F80E9;
+}
+
+
+/* ================= About ================= */
+
+/* About page main */
+.about-main {
+    width: 100%;
+}
+
+
+/* Section basis */
+.about-section {
+    padding: 4rem 2rem;
+}
+
+/* Content centreren en maximale breedte */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Titel */
+.about-content h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: bold;
+}
+
+/* Tekst */
+.about-content p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    color: #333;
+}
+
+
+
+
+/* Section 2 full width */
+.section-2 {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+}
+
+/* Content centreren met max-width voor titel, maar cards nemen volledige breedte */
+.whatido-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.whatido-content h2{
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: bold;
+}
+
+
+/* Cards container als grid */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Card styling */
+.card {
+    background-color: #DDFFF8;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Card titel */
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+/* Card tekst */
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+
+
+
+
+/* Section 3 styling */
+.section-3 {
+    padding: 4rem 2rem;
+}
+
+/* Content centreren, maar tekst links uitlijnen */
+.section-3 .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Titel gecentreerd houden */
+.section-3 .about-content h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+        font-weight: bold;
+    text-align: center;
+}
+
+/* Tekst links */
+.section-3 .about-content p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    color: #333;
+}
+
 
 /* ================= RESPONSIVE ================= */
 
@@ -113,7 +303,7 @@ footer {
     footer {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 0.5rem;
+        gap: 1rem;
     }
 
     .footer-left,
@@ -121,4 +311,30 @@ footer {
     .footer-right {
         text-align: center;
     }
+
+
+    @media (max-width: 768px) {
+    
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    
+      .hero-image img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+                /* op mobiel onder elkaar */
+                gap: 1.5rem;
+            }
+        }
+
+
+
+
 }
