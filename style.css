@@ -442,16 +442,19 @@ footer {
     border-radius: 6px;
 }
 
-.image-wrapper .special{
+.image-wrapper.special {
     display: flex;
+    justify-content: center;
     gap: 10px;
-    /* height: 180px;
-    width: 100%; */
+    flex-wrap: nowrap;
 }
 
-.special img{
-    height: 180px;
-    width: 90px;
+
+.image-wrapper.special img {
+    width: 30%;
+    max-width: 90px;
+    border-radius: 12px;
+    border: 2px solid #ccc;
 }
 
 
